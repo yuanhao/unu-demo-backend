@@ -12,7 +12,7 @@ var io = require('socket.io')(http);
 
 app.configure(function() {
     app.use(express.bodyParser());
-    app.use(express.static('public'));
+    app.use(express.static(__dirname + "/public"));
 });
 
 io.on('connection', function(socket) {
@@ -26,10 +26,10 @@ io.on('connection', function(socket) {
     });
 });
 
-var stores = require('./routes/stores');
+var stores = require(__dirname + '/routes/stores');
 
 app.get('/', function(req, res) {
-    res.sendFile('./public/index.html');
+    res.sendFile(__dirname + '/public/index.html');
 });
 app.get('/stores', stores.findAll);
 app.post('/stores', stores.add);
