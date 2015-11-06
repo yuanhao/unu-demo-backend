@@ -1,0 +1,10 @@
+{
+  "name": "demo-unu",
+  "description": "Demo unu",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "3.x",
+    "socket.io": "^1.3.7"
+  }
+}
