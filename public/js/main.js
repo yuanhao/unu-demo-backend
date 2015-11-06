@@ -58,8 +58,8 @@ function initStoreLocations() {
         var storeList = data["storeList"];
         for (var key in storeList) {
             var storeName = key;
-            var storeLat = parseInt(storeList[key]['lat']);
-            var storeLon = parseInt(storeList[key]['lon']);
+            var storeLat = parseFloat(storeList[key]['lat']);
+            var storeLon = parseFloat(storeList[key]['lon']);
 
             var loc = new google.maps.LatLng(storeLat, storeLon);
             var marker = new google.maps.Marker({
